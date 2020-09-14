@@ -1,2 +1,3 @@
-# alura_courses
-this repo contains all the project/folders that I created during my second focused studied on alura.
+# Alura Study
+
+Here is some of my study on Alura, all that I've created.
