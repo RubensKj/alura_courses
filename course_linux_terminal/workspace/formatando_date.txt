@@ -1,0 +1,15 @@
+In case you want to format date,
+
+use
+
+date "+%d/%m/%Y"
+
+OUTPUT:
+14/09/2020
+
+
+In case you want the OUTPUT of: "19 de janeiro de 2016"
+
+use:
+
+date "+%d de %B de %Y"
