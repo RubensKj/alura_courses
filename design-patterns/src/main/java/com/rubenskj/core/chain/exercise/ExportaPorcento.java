@@ -26,6 +26,10 @@ public class ExportaPorcento implements Exporta {
             return;
         }
 
+        if (exporta == null) {
+            throw new IllegalStateException("Nao foi possivel encontrar o Formato desejado.");
+        }
+
         exporta.responde(requisicaoExportacao, conta);
     }
 }
