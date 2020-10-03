@@ -1,4 +1,4 @@
-package com.rubenskj.core;
+package com.rubenskj.core.chain;
 
 public class Item {
 

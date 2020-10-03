@@ -1,4 +1,6 @@
-package com.rubenskj.core;
+package com.rubenskj.core.chain;
+
+import com.rubenskj.core.model.Orcamento;
 
 public class DescontoPorVendaCasada implements Desconto {
     private Desconto desconto;

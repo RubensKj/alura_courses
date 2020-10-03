@@ -1,4 +1,6 @@
-package com.rubenskj.core;
+package com.rubenskj.core.model;
+
+import com.rubenskj.core.chain.Item;
 
 import java.util.ArrayList;
 import java.util.Collections;

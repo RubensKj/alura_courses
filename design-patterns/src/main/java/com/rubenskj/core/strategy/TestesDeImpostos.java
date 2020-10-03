@@ -1,6 +1,8 @@
-package com.rubenskj.core;
+package com.rubenskj.core.strategy;
 
-public class MainApplication {
+import com.rubenskj.core.model.Orcamento;
+
+public class TestesDeImpostos {
 
     public static void main(String[] args) {
         Imposto iss = new ISS();
