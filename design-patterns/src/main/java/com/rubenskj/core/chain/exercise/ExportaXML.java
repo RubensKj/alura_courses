@@ -3,6 +3,10 @@ package com.rubenskj.core.chain.exercise;
 public class ExportaXML implements Exporta {
     private Exporta exporta;
 
+    public ExportaXML(Exporta exporta) {
+        this.exporta = exporta;
+    }
+
     @Override
     public void responde(RequisicaoExportacao requisicaoExportacao, Conta conta) {
         Formato formato = requisicaoExportacao.getFormato();
@@ -19,10 +23,5 @@ public class ExportaXML implements Exporta {
         }
 
         exporta.responde(requisicaoExportacao, conta);
-    }
-
-    @Override
-    public void setProxima(Exporta exporta) {
-        this.exporta = exporta;
     }
 }
