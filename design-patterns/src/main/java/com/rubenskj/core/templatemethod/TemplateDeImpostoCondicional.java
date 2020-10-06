@@ -5,7 +5,7 @@ import com.rubenskj.core.strategy.Imposto;
 
 public abstract class TemplateDeImpostoCondicional implements Imposto {
     @Override
-    public double calcula(Orcamento orcamento) {
+    public final double calcula(Orcamento orcamento) {
         if (deveUsarMaximaTaxacao(orcamento)) {
             return maximaTaxacao(orcamento);
         }
