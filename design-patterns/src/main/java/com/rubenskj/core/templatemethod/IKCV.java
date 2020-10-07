@@ -2,8 +2,16 @@ package com.rubenskj.core.templatemethod;
 
 import com.rubenskj.core.chain.Item;
 import com.rubenskj.core.model.Orcamento;
+import com.rubenskj.core.strategy.Imposto;
 
 public class IKCV extends TemplateDeImpostoCondicional {
+
+    public IKCV() {
+    }
+
+    public IKCV(Imposto outroImposto) {
+        super(outroImposto);
+    }
 
     private boolean temItemMaiorQue100Reais(Orcamento orcamento) {
         for (Item item : orcamento.getItens()) {

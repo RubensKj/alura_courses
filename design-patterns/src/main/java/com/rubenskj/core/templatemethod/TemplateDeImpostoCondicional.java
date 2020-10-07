@@ -3,14 +3,22 @@ package com.rubenskj.core.templatemethod;
 import com.rubenskj.core.model.Orcamento;
 import com.rubenskj.core.strategy.Imposto;
 
-public abstract class TemplateDeImpostoCondicional implements Imposto {
+public abstract class TemplateDeImpostoCondicional extends Imposto {
+
+    public TemplateDeImpostoCondicional() {
+    }
+
+    public TemplateDeImpostoCondicional(Imposto outroImposto) {
+        super(outroImposto);
+    }
+
     @Override
     public final double calcula(Orcamento orcamento) {
         if (deveUsarMaximaTaxacao(orcamento)) {
-            return maximaTaxacao(orcamento);
+            return maximaTaxacao(orcamento) + calculaDoOutroImposto(orcamento);
         }
 
-        return minimaTaxacao(orcamento);
+        return minimaTaxacao(orcamento) + calculaDoOutroImposto(orcamento);
     }
 
     protected abstract double minimaTaxacao(Orcamento orcamento);

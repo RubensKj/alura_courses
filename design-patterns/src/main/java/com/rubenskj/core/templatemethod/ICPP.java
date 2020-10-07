@@ -1,8 +1,16 @@
 package com.rubenskj.core.templatemethod;
 
 import com.rubenskj.core.model.Orcamento;
+import com.rubenskj.core.strategy.Imposto;
 
 public class ICPP extends TemplateDeImpostoCondicional {
+
+    public ICPP() {
+    }
+
+    public ICPP(Imposto outroImposto) {
+        super(outroImposto);
+    }
 
     @Override
     public double minimaTaxacao(Orcamento orcamento) {
