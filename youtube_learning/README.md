@@ -2,6 +2,8 @@
 
 <p>This is some of my youtube learning</p>
 
+Useful website: https://tryhackme.com/
+
 ## Commands Found
 
 ### nmap
@@ -28,6 +30,16 @@ gobuster -w /opt/DirBuster-0.12/directory-list-2.3-medium.txt -u http://ip_or_do
 ### linpeas
 
 ### hydra
+
+usage:
+
+```
+hydra -l USER_NAME -P FILE_OF_PASS ssh://IP_MACHINE
+```
+
+```
+hydra -l jan -P /opt/rockyou.txt ssh://10.10.100.180
+```
 
 ### enum4linux
 
