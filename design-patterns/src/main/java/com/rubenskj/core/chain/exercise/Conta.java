@@ -1,5 +1,9 @@
 package com.rubenskj.core.chain.exercise;
 
+import com.rubenskj.core.state.account.EstadoConta;
+import com.rubenskj.core.state.account.SaldoNegativoState;
+import com.rubenskj.core.state.account.SaldoPositivoState;
+
 import java.time.LocalDateTime;
 
 public class Conta {
@@ -8,9 +12,17 @@ public class Conta {
     private double saldo;
     private LocalDateTime dateCreated;
 
+    protected EstadoConta estadoConta;
+
     public Conta(String titular, double saldo) {
         this.titular = titular;
         this.saldo = saldo;
+
+        if (saldo > 0) {
+            this.estadoConta = new SaldoPositivoState();
+        } else {
+            this.estadoConta = new SaldoNegativoState();
+        }
     }
 
     public Conta(String titular, double saldo, LocalDateTime dateCreated) {
@@ -41,6 +53,22 @@ public class Conta {
 
     public void setDateCreated(LocalDateTime dateCreated) {
         this.dateCreated = dateCreated;
+    }
+
+    public EstadoConta getEstadoConta() {
+        return estadoConta;
+    }
+
+    public void setEstadoConta(EstadoConta estadoConta) {
+        this.estadoConta = estadoConta;
+    }
+
+    public void saque(double valor) {
+        this.estadoConta.saque(this, valor);
+    }
+
+    public void deposita(double valor) {
+        this.estadoConta.deposita(this, valor);
     }
 
     @Override
