@@ -1,6 +1,7 @@
 package com.rubenskj.core.builder;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Calendar;
 import java.util.List;
 
@@ -14,6 +15,10 @@ public class NotaFiscalBuilder {
     private List<ItemNota> itens = new ArrayList<>();
     private String observacoes;
 
+    public NotaFiscalBuilder() {
+        this.dataEmissao = Calendar.getInstance();
+    }
+
     public NotaFiscalBuilder empresa(String razaoSocial) {
         this.razaoSocial = razaoSocial;
 
@@ -26,10 +31,15 @@ public class NotaFiscalBuilder {
         return this;
     }
 
-    public NotaFiscalBuilder itens(ItemNota itemNota) {
-        this.itens.add(itemNota);
-        this.valorBruto += itemNota.getValor();
-        this.impostos += itemNota.getValor() * 0.05;
+    public NotaFiscalBuilder itens(ItemNota... itensArray) {
+        List<ItemNota> itemNotas = Arrays.asList(itensArray);
+
+        this.itens.addAll(itemNotas);
+
+        itemNotas.forEach(itemNota -> {
+            this.valorBruto += itemNota.getValor();
+            this.impostos += itemNota.getValor() * 0.05;
+        });
 
         return this;
     }
@@ -40,8 +50,8 @@ public class NotaFiscalBuilder {
         return this;
     }
 
-    public NotaFiscalBuilder dataEmissao() {
-        this.dataEmissao = Calendar.getInstance();
+    public NotaFiscalBuilder dataEmissao(Calendar novaData) {
+        this.dataEmissao = novaData;
 
         return this;
     }

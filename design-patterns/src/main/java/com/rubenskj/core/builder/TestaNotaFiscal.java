@@ -1,5 +1,7 @@
 package com.rubenskj.core.builder;
 
+import java.util.Calendar;
+
 public class TestaNotaFiscal {
 
     public static void main(String[] args) {
@@ -13,12 +15,12 @@ public class TestaNotaFiscal {
                 .build();
 
         builder.empresa("Carlum Ensino e Inovação")
-        .cnpj("12.345.678/0001-12")
-        .itens(item1)
-        .itens(new ItemNota("Item 2", 300.0))
-        .itens(new ItemNota("Item 3", 400.0))
-        .observacoes("Observacoes")
-        .dataEmissao();
+                .cnpj("12.345.678/0001-12")
+                .itens(item1)
+                .itens(new ItemNota("Item 2", 300.0))
+                .itens(new ItemNota("Item 3", 400.0))
+                .observacoes("Observacoes")
+                .dataEmissao(Calendar.getInstance());
 
         NotaFiscal nf = builder.build();
 
