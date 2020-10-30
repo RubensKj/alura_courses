@@ -17,7 +17,7 @@ public abstract class Filtro {
 
     public abstract List<Conta> filtra(List<Conta> contas);
 
-    protected List<Conta> executaFiltro(List<Conta> contas) {
+    protected final List<Conta> executaFiltro(List<Conta> contas) {
         if (filtro != null) {
             return this.filtro.filtra(contas);
         }
