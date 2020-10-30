@@ -24,6 +24,11 @@ public class NotaFiscalBuilder {
         this.observers = new ArrayList<>();
     }
 
+    public NotaFiscalBuilder(List<Observer> observers) {
+        this.dataEmissao = Calendar.getInstance();
+        this.observers = observers;
+    }
+
     public void addObservers(Observer... observer) {
         this.observers.addAll(Arrays.asList(observer));
     }
