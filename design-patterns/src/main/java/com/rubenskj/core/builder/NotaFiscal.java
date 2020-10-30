@@ -81,4 +81,17 @@ public class NotaFiscal {
     public void setObservacoes(String observacoes) {
         this.observacoes = observacoes;
     }
+
+    @Override
+    public String toString() {
+        return "NotaFiscal{" +
+                "razaoSocial='" + razaoSocial + '\'' +
+                ", cnpj='" + cnpj + '\'' +
+                ", dataEmissao=" + dataEmissao +
+                ", valorBruto=" + valorBruto +
+                ", impostos=" + impostos +
+                ", itens=" + itens +
+                ", observacoes='" + observacoes + '\'' +
+                '}';
+    }
 }
